@@ -350,6 +350,9 @@ vendor/lib64/libllvm-glnext.so|432902263ebf1ad7d2b4a0b463d54af84789a772
 vendor/lib64/libllvm-qcom.so|ce7227f3c6aacaecfb83113c6052318cb159eea0
 vendor/lib64/librs_adreno.so|d8bee70cc12ab5c6a979427e24fb7843fddae08b
 
+# IRQ balance
+vendor/bin/msm_irqbalance
+
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
@@ -445,23 +448,6 @@ vendor/lib64/unnhal-acc-adreno.so|cd6c09fcbc6227b238bfec33ef93eef8ad7f1ab1
 vendor/lib64/unnhal-acc-common.so|72ca3f61c374ad7f5cad81f46ec3532ba520f3bb
 vendor/lib64/unnhal-acc-hta.so|f5fd4c0469b71e045c0dd8661153a3666af77ea3
 vendor/lib64/unnhal-acc-hvx.so|70db9e87b20e074e0466fdc2c8513547e01cbff7
-
-# Perf
-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
-vendor/bin/msm_irqbalance
-vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libperfioctl.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib/libperfconfig.so
-vendor/lib/libperfgluelayer.so
-vendor/lib/libperfioctl.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
 
 # Peripheral manager - from LA.UM.9.1.r1-09100-SMxxx0.0
 vendor/bin/pm-proxy|dd13e8b611876af819065a9c3a2dfc1ed5b4fae7
