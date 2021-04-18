@@ -90,22 +90,15 @@ case "$soc_id" in
 
     # Configure governor settings for little cluster
     echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    echo 1000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
-    echo 1000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
-    echo 1516800 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
-    echo 1017600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-    echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl
+    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
 
     # Configure governor settings for big cluster
     echo "schedutil" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
-    echo 1000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
-    echo 1000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
-    echo 1516800 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq
-    echo 979200 > /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq
-    echo 1 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl
+    echo 500 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
 
-    # Set hispeed load to 85 on big cluster
-    # sched_load_boost as -6 is equivalent to target load as 85
+    # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
     echo -6 >  /sys/devices/system/cpu/cpu6/sched_load_boost
     echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
     echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
@@ -188,22 +181,14 @@ case "$soc_id" in
 
     # Configure governor settings for little cluster
     echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    echo 1000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
-    echo 1000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
-    echo 1497600 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
-    echo 1017600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-    echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl
+    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
 
     # Configure governor settings for big cluster
     echo "schedutil" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
-    echo 1000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
-    echo 1000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
-    echo 1555200 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq
-    echo 979200 > /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq
-    echo 1 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl
-
-    # Set hispeed load to 85 on big cluster
-    # sched_load_boost as -6 is equivalent to target load as 85
+    echo 500 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
+    # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
     echo -6 >  /sys/devices/system/cpu/cpu6/sched_load_boost
     echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
     echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
