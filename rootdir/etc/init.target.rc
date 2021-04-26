@@ -51,6 +51,9 @@ on early-init
     write /sys/block/dm-2/queue/read_ahead_kb 2048
     write /sys/block/dm-3/queue/read_ahead_kb 2048
 
+    # Disable EAS
+    write /proc/sys/kernel/sched_energy_aware 0
+
 on init
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
